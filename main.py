@@ -1,5 +1,5 @@
 from flask import Flask
-from flask import SEND_FROM_directory
+from flask import send_from_directory
 
 from flask.ext.restful import Api
 
