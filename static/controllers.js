@@ -30,10 +30,7 @@ controllers.controller('map_controller', ['$scope', '$http', 'spinnerService', f
 			drawingControlOptions: {
 				position: google.maps.ControlPosition.TOP_CENTER,
 				drawingModes: [
-					google.maps.drawing.OverlayType.POLYGON,
-					google.maps.drawing.OverlayType.CIRCLE,
-					google.maps.drawing.OverlayType.POLYLINE,
-					google.maps.drawing.OverlayType.RECTANGLE
+					google.maps.drawing.OverlayType.POLYGON
 				]
 			},
 			circleOptions: {
