@@ -4,23 +4,25 @@
 	<head>
 		<title>boilerplate</title>
 
+		<link href='https://fonts.googleapis.com/css?family=Lato:700,300,400,900,400italic' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/main.css">
 
 		<script src="bower_components/jquery/dist/jquery.min.js"></script>
 		<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
+		<script src="https://maps.googleapis.com/maps/api/js?libraries=places,drawing"></script>
+
 		<script src="bower_components/angular/angular.min.js"></script>
 		<script src="bower_components/angular-route/angular-route.min.js"></script>
-
-		<script src="js/main.js"></script>
-		<script src="js/spin.min.js"></script>
+		<script src="bower_components/angular-spinners/dist/angular-spinners.min.js"></script>
 
 		<script src="app.js"></script>
 		<script src="controllers.js"></script>
 		<script src="services.js"></script>
+		<script src="directives.js"></script>
 	</head>
 	<body>
-		<div ng-view></div>
+		<div class="full-height" ng-view></div>
 	</body>
 </html>

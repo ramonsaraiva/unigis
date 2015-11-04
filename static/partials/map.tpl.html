@@ -1,0 +1,35 @@
+<div class="container-fluid full-height">
+	<div class="row full-height">
+		<div class="col-lg-2 col-md-3 col-sm-4 col-xs-4 full-height" id="control">
+			<h3 class="text-center"><strong>UniGIS</strong></h3>
+			<h4 class="text-center"><strong><small>Unisinos & PostGIS</small></strong></h4>
+			<ul class="list-group">
+				<li class="list-group-item" ng-repeat="b in buildings" style="background: #{{ b.fill_color }}">
+				<span class="badge">{{ b.contains }}</span>
+				{{ b.name }}
+			  </li>
+			</ul>
+			<div ng-show="custom_buildings.length > 0">
+				<h3 class="text-center"><strong>Custom polygons</strong></h3>
+				<ul class="list-group">
+					<li class="list-group-item" ng-repeat="b in custom_buildings" style="background: rgb(66, 69, 73)">
+					<span class="badge">{{ b.contains }}</span>
+					<a ng-click="delete_polygon($index)"><span class="glyphicon glyphicon-remove" style="margin-right: 8px;"></span></a> Polygon #{{ $index }}</br/><small><span class="glyphicon glyphicon-link"></span> ({{ b.intersects }})</small>
+				  </li>
+				</ul>
+			</div>
+			<div class="form text-center">
+				<div class="form-group">
+					<label>Points plotted</label>
+					<input type="text" ng-model="points" class="form-control text-center" />
+				</div>
+			</div>
+			<button ng-click="generate()" class="btn btn-primary form-control"><strong>Apply</strong></button>
+		</div>
+		<div class="col-lg-10 col-md-9 col-sm-8 col-xs-8 full-height">
+			<div id="map-canvas">
+			</div>
+			<spinner name="g_spinner" img-src="img/g.gif" class="spinner"></spinner>
+		</div>
+	</div>
+</div>

@@ -2,6 +2,7 @@
 
 var app = angular.module('app', [
 	'ngRoute',
+	'angularSpinners',
 	'controllers',
 	'services',
 	'directives',
@@ -9,13 +10,11 @@ var app = angular.module('app', [
 
 app.config(['$routeProvider', function($routeProvider) {
 	$routeProvider
-		.when('/home/', {
-			templateUrl: 'partials/home.tpl.html',
-		})
 		.when('/', {
-			redirectTo: '/home/'
+			templateUrl: 'partials/map.tpl.html',
+			controller: 'map_controller'
 		})
 		.otherwise({
-			redirectTo: '/home/'
+			redirectTo: '/'
 		});
 }]);
