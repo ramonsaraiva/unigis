@@ -47,7 +47,6 @@ class Buildings(Resource):
 		args = self.reqparse.parse_args()
 		contains = Point.query.filter(Point.geom.ST_Within(args['polygon'])).all()
 		intersects = Building.query.filter(Building.geom.ST_Intersects(args['polygon'])).filter(Building.name != 'Unisinos').all()
-		print(intersects)
 		data = {
 			'contains': len(contains),
 			'intersects': (', ').join([b.name for b in intersects])
